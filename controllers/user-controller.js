@@ -2,7 +2,7 @@ const { User } = require('../models');
 
 const UserController = {
     // get all Users (GET /api/Users)
-    getAllUser(req, res) {
+    getAllUsers(req, res) {
       User.find({})
       // populates field with stored thought and friend associated to User
       .populate([

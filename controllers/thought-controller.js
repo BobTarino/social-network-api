@@ -50,7 +50,7 @@ const thoughtController = {
       })
       .catch(err => res.json(err));
   },
-  // add nested reaction to thought
+  // add nested reaction to thought (POST /api/thoughts/:thoughtId/reactions)
   addReaction({ params, body }, res) {
         thought.findOneAndUpdate(
             { _id: params.thoughtId },
@@ -102,7 +102,7 @@ const thoughtController = {
           .catch(err => res.json(err));
   },
 
-  // remove Reaction (DELETE/api/thoughts/:thoughtId/reactions)
+  // remove Reaction (DELETE /api/thoughts/:thoughtId/reactions)
   deleteReaction({ params }, res) {
     thought.findOneAndUpdate(
       { _id: params.thoughtId },
