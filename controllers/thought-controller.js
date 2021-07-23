@@ -97,7 +97,7 @@ const ThoughtController = {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       // $pull operator to remove the specific Reaction from the reactions array where the ReactionId matches the value of params.ReactionId passed in from the route.
-      { $pull: { reactions: { ReactionId: params.ReactionId } } },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
       { new: true }
     )
       .then(dbUserData => res.json(dbUserData))
