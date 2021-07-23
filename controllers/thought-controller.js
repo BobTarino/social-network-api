@@ -33,7 +33,7 @@ const ThoughtController = {
   // add thought to User
   createThought({ params, body }, res) {
     console.log(body);
-    thought.create(body)
+    Thought.create(body)
       .then(({ _id }) => {
         return User.findOneAndUpdate(
           { username: body.username },
@@ -52,7 +52,7 @@ const ThoughtController = {
   },
   // add nested reaction to thought (POST /api/thoughts/:thoughtId/reactions)
   addReaction({ params, body }, res) {
-        thought.findOneAndUpdate(
+        Thought.findOneAndUpdate(
             { _id: params.thoughtId },
             { $push: { reactions: body } },
             { new: true, runValidators: true }
@@ -81,30 +81,20 @@ const ThoughtController = {
   },
   // remove thought
   removeThought({ params }, res) {
-        thought.findOneAndDelete({ _id: params.thoughtId })
-          .then(deletedthought => {
-            if (!deletedthought) {
-              return res.status(404).json({ message: 'No thought with this id!' });
-            }
-            return User.findOneAndUpdate(
-              { _id: params.UserId },
-              { $pull: { thoughts: params.thoughtId } },
-              { new: true }
-            );
-          })
-          .then(dbUserData => {
-            if (!dbUserData) {
-              res.status(404).json({ message: 'No User found with this id!' });
-              return;
-            }
-            res.json(dbUserData);
-          })
-          .catch(err => res.json(err));
+        Thought.findOneAndDelete({ _id: params.id })
+        .then(dbThoughtData => {
+          if (!dbThoughtData) {
+            res.status(404).json({ message: 'No thought found with this id!' });
+            return;
+          }
+          res.json(dbThoughtData);
+        })
+        .catch(err => res.status(400).json(err));
   },
 
   // remove Reaction (DELETE /api/thoughts/:thoughtId/reactions)
   deleteReaction({ params }, res) {
-    thought.findOneAndUpdate(
+    Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       // $pull operator to remove the specific Reaction from the reactions array where the ReactionId matches the value of params.ReactionId passed in from the route.
       { $pull: { reactions: { ReactionId: params.ReactionId } } },
