@@ -20,6 +20,9 @@ Clone files on GitHub to your machine. You will then run 'npm i' and it will ins
 ![Screen Shot 2021-07-23 at 6 12 12 PM](https://user-images.githubusercontent.com/79377937/126851252-5f53c427-ff33-421e-af87-7df909145349.png)
 ![Screen Shot 2021-07-23 at 6 14 07 PM](https://user-images.githubusercontent.com/79377937/126851234-5f655d5d-4a1e-48d1-b342-80d5cfc22cef.png)
 
+[Walkthrough P.1](https://drive.google.com/file/d/1ZsY3PYBbfzW1A2PMBq7pmfVg4ZsnFgCD/view)
+[Walkthrough P.2](https://drive.google.com/file/d/1fie-Si-efJwzHUEVipzvfs9cZNOsehEB/view)
+
 ## Usage
 Javascript, Express, MongoDB, Mongoose
 
