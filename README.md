@@ -33,5 +33,5 @@ Javascript, Express, MongoDB, Mongoose
 
 ## Questions
 
-:octocat: If you have questions about this repository, please contact me at bob.tarino@gmail.com
+If you have questions about this repository, please contact me at bob.tarino@gmail.com
 You can see any of my other work at [BobTarino](https://github.com/BobTarino/)<br />
