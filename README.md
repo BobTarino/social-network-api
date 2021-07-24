@@ -1,5 +1,5 @@
-# social-network-api
-<h1 align="center"> Thought-Processor/h1>
+
+<h1 align="center"> Thought-Processor</h1>
 
 ![badgeImage](https://img.shields.io/badge/license-MIT-blue)
 
@@ -13,7 +13,7 @@ SO THAT my website can handle large amounts of unstructured data
 - [Installation](#install)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contribution)
+- [Repo](#repo)
 - [Questions](#questions)
 ## Installation
 Clone files on GitHub to your machine. You will then run 'npm i' and it will install the needed dependencies.
